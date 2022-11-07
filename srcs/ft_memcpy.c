@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 17:17:18 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/08/11 10:17:03 by ezanotti         ###   ########lyon.fr   */
+/*   Created: 2022/11/07 17:45:28 by ezanotti          #+#    #+#             */
+/*   Updated: 2022/11/07 18:43:52 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int	negatif;
-	int	total;
+#include "libft.h"
 
-	negatif = 0;
-	total = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	while (*str == '-' || *str == '+')
+void *ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
+	size_t	len_src;
+
+	i = 0;
+	len_src = 0;
+	while (src[len_src])
+		len_src++;
+	if (size == 0)
+		return (len_src);
+	while (src[i] && i < size - 1)
 	{
-		if (*str == '-')
-			negatif++;
-		str++;
+		dst[i] = src[i];
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		total = (total * 10) + *str - '0';
-		str++;
-	}
-	if (negatif % 2)
-		return (-total);
-	return (total);
+	dst[i] = '\0';
+	return (len_src);
 }

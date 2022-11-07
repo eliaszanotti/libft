@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 13:54:21 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/07 14:36:03 by ezanotti         ###   ########lyon.fr   */
+/*   Created: 2022/08/07 17:17:18 by ezanotti          #+#    #+#             */
+/*   Updated: 2022/11/07 18:58:01 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
+int	ft_atoi(char *str)
 {
-	int	size;
+	int	negatif;
+	int	total;
 
-	size = 0;
-	while (s[size])
-		size++;
-	return (size);
+	negatif = 0;
+	total = 0;
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	while (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			negatif++;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		total = (total * 10) + *str - '0';
+		str++;
+	}
+	if (negatif % 2)
+		return (-total);
+	return (total);
 }
