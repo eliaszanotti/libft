@@ -6,16 +6,16 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:54:21 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/07 13:58:45 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 14:36:03 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
 	int	size;
 
 	size = 0;
-	while (str[size])
+	while (s[size])
 		size++;
 	return (size);
 }
