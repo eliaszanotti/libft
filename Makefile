@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/08 14:52:09 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/08 16:02:34 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS	= srcs/ft_isalpha.c \
 	srcs/ft_strrchr.c \
 	srcs/ft_strncmp.c \
 	srcs/ft_memchr.c  \
+	srcs/ft_memcmp.c  \
 	srcs/ft_atoi.c 
 
 OBJS	= ${SRCS:.c=.o}

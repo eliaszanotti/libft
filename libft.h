@@ -6,12 +6,12 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:27:55 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/08 14:51:51 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 16:03:08 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_FILE
-#define HEADER_FILE
+#ifndef __HDR__
+#define __HDR__
 
 #include <stddef.h>
 
@@ -33,6 +33,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 // ...
 int		ft_atoi(const char *str);
 
