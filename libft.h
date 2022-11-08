@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:27:55 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/08 16:03:08 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 17:43:37 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define __HDR__
 
 #include <stddef.h>
+#include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -36,5 +37,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 // ...
 int		ft_atoi(const char *str);
+void	*ft_calloc(size_t nelem, size_t elsize);
+char	*ft_strdup(const char *s);
 
 #endif
