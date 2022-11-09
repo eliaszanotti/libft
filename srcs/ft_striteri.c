@@ -6,18 +6,22 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:28:46 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/09 10:34:02 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 22:07:57 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	size_t	len;	
+	size_t	i;
 
 	i = 0;
-	while (s[i])
+	len = ft_strlen(s);
+	while (i < len)
 	{
-		f(i, s);
+		f(i, &s[i]);
 		i++;
 	}
 }

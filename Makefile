@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/09 19:29:34 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/09 21:42:05 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRCS	= srcs/ft_isalpha.c \
 	srcs/ft_strtrim.c  \
 	srcs/ft_split.c    \
 	srcs/ft_itoa.c     \
+	srcs/ft_strmapi.c  \
 	srcs/ft_striteri.c \
 	srcs/ft_putchar_fd.c \
 	srcs/ft_putstr_fd.c  \
