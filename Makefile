@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/09 21:42:05 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/09 22:28:39 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,10 @@ SRCS	= srcs/ft_isalpha.c \
 
 OBJS	= ${SRCS:.c=.o}
 
+SRCS_B	= srcs/ft_lstnew.c
+
+OBJS_B	= ${SRCS_B:.c=.o}
+
 NAME	= libft.a
 
 HEADER	= . 
@@ -72,3 +76,5 @@ fclean :	clean
 			${RM} ${NAME}
 
 re :		fclean all
+
+bonus :		all
