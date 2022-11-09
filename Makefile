@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/08 19:09:00 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/09 10:11:59 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,13 +33,14 @@ SRCS	= srcs/ft_isalpha.c \
 	srcs/ft_calloc.c   \
 	srcs/ft_strdup.c   \
 	srcs/ft_split.c    \
-	srcs/ft_putchar_fd \
+	srcs/ft_putchar_fd.c \
+	srcs/ft_putstr_fd.c
 
 OBJS	= ${SRCS:.c=.o}
 
 NAME	= libft.a
 
-HEADER	= ./includes/ 
+HEADER	= . 
 
 CC		= gcc
 CFLAGS	= -g3 -Wall -Wextra -Werror
@@ -51,7 +52,7 @@ AR		= ar rc
 			${CC} ${CFLAGS} -I ${HEADER} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS} 
-			${AR} ${CFLAGS} -I ${HEADER} ${NAME} ${OBJS}
+			${AR} ${NAME} ${OBJS}
 
 all :		${NAME}
 

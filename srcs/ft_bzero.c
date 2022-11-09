@@ -6,11 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:10:37 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/07 15:21:24 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 10:09:30 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

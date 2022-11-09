@@ -6,11 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:48:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/08 15:17:35 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 10:10:56 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
