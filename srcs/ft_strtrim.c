@@ -6,15 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:11:35 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/09 14:03:03 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 22:31:43 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//#include <stdlib.h>
-//#include <string.h>
-//#include <stdio.h>
 
 int	ft_isonset(char c, char const *set)
 {
