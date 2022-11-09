@@ -6,9 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:37:31 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/08 17:41:16 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 17:55:29 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {
