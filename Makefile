@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/09 17:56:52 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/09 19:29:34 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS	= srcs/ft_isalpha.c \
 	srcs/ft_strncmp.c  \
 	srcs/ft_memchr.c   \
 	srcs/ft_memcmp.c   \
+	srcs/ft_strnstr.c  \
 	srcs/ft_atoi.c     \
 	srcs/ft_calloc.c   \
 	srcs/ft_strdup.c   \
