@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 13:37:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/09 21:30:32 by ezanotti         ###   ########lyon.fr   */
+/*   Created: 2022/11/08 16:07:19 by ezanotti          #+#    #+#             */
+/*   Updated: 2022/11/09 21:25:54 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	const char	*copy_s1;
-	const char	*copy_s2;
-	size_t		i;
-	
-	copy_s1 = s1;
-	copy_s2 = s2;
+	size_t	i;
+	size_t	j;
+	size_t	save;
+	size_t	len_needle;
+
+	save = 0;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && *copy_s1 == *copy_s2)
+	len_needle = ft_strlen(needle);
+	if (len_needle == 0)
+		return ((char *)haystack);
+	while (haystack[i] && len > i)
 	{
-		copy_s1++;
-		copy_s2++;
-		i++;
+		i = save;
+		while (haystack[i] == needle[j] && len > i)
+		{
+			i++;
+			j++;
+			if (needle[j] == '\0')
+				return ((char *)haystack + save);
+		}
+		save++;
+		j = 0;
 	}
-	return (*copy_s1 - *copy_s2);
+	return (0);
 }
