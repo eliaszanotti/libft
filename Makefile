@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/09 10:11:59 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/09 10:20:53 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,9 @@ SRCS	= srcs/ft_isalpha.c \
 	srcs/ft_strdup.c   \
 	srcs/ft_split.c    \
 	srcs/ft_putchar_fd.c \
-	srcs/ft_putstr_fd.c
+	srcs/ft_putstr_fd.c  \
+	srcs/ft_putendl_fd.c \
+	srcs/ft_putnbr_fd.c
 
 OBJS	= ${SRCS:.c=.o}
 
