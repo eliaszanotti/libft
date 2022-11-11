@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:07:19 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/11 17:31:14 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 17:47:33 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t			j;
 
 	i = 0;
+	if (!haystack || !needle)
+		return (ft_strdup(""));
 	while (haystack[i] && i < len)
 	{
 		j = 0;
