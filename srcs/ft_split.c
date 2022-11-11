@@ -12,7 +12,9 @@
 
 #include "libft.h"
 
-size_t	ft_mallocsize(char const *s, char c)
+//#include <stdio.h>
+
+static size_t	ft_mallocsize(char const *s, char c)
 {
 	size_t	count;
 
@@ -31,59 +33,64 @@ size_t	ft_mallocsize(char const *s, char c)
 	return (count);
 }
 
-char	*ft_charcat(char *s, char c)
+static char **ft_splitstr(char const *s, char c, char **tab)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	s[i] = c;
-	s[i + 1] = '\0';
-	return (s);
-}
-
-char **ft_split(char const *s, char c)
-{
-	char	**tab;
-	int		i_tab;
-	int		i;
-	int		j;
-
-	tab = malloc((ft_mallocsize(s, c) + 1) * (sizeof(char *)));
-	if (!tab)
-		return (0);
-	i_tab = 0;
+	int i;
+	int j;
+	int i_tab;
+	
 	i = 0;
 	j = 0;
+	i_tab = 0;
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
 			i++;
-		j = i;
-		while (s[j] != c && s[j])
+		while (s[i] != c && s[i])
+		{
+			i++;
 			j++;
-		tab[i_tab] = malloc(sizeof(char) * (j + 1));
-		if (!tab[i_tab])
+		}
+		tab[i_tab] = malloc(sizeof(char) * (j + 1)); 
+		if (!tab)
 			return (0);
-		tab[i_tab][0] = '\0';
-		strlcpy(tab[i_tab], s + i, j - i + 1);
-		i = j;
-		i_tab++;	
+		ft_strlcpy(tab[i_tab], s + (i - j), j + 1);
+		j = 0;
+		i_tab++;
 	}
-	tab[ft_mallocsize(s, c)] = 0;
 	return (tab);
 }
 
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+	size_t	mallocsize;
+
+	if (!s)
+		return (0);
+	mallocsize = ft_mallocsize(s, c); 
+	tab = malloc(sizeof(char *) * (mallocsize + 1));
+	if (!tab)
+		return (0);
+	tab = ft_splitstr(s, c, tab);
+	tab[mallocsize] = 0;
+	return (tab);
+}
+/*
+#include <stdio.h>
 int main()
 {
 	int i = 0;
+	char *s = "   tetdet dfetfe detfefefe";
 
-	char **tab = ft_split("", ' ');
+	char **tab = ft_split(s, ' ');
+	size_t size = ft_mallocsize(s, ' ');
+	
+	printf("%lu\n", size);
+	
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);
 		i++;
 	}
-	printf("%s\n", tab[i]);
-}
+}*/
