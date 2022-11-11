@@ -6,13 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:03:41 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/10 11:38:02 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 12:12:54 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//#include <stdio.h>
 
 static size_t	ft_mallocsize(char const *s, char c)
 {
