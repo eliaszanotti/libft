@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/11 13:10:36 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/11 13:13:40 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS	= srcs/ft_isalpha.c srcs/ft_isdigit.c srcs/ft_isalnum.c \
 OBJS	= ${SRCS:.c=.o}
 
 SRCS_B	= srcs/ft_lstnew.c srcs/ft_lstadd_front.c srcs/ft_lstsize.c \
-	srcs/ft_lstlast.c srcs/ft_lstadd_back.c srcs/ft_lstdelone \
+	srcs/ft_lstlast.c srcs/ft_lstadd_back.c srcs/ft_lstdelone.c \
 	srcs/ft_lstclear.c srcs/ft_lstiter.c srcs/ft_lstmap.c
 
 OBJS_B	= ${SRCS_B:.c=.o}
@@ -44,7 +44,7 @@ all :		${NAME}
 			${CC} ${CFLAGS} -I ${HEADER} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS} 
-			${AR} ${NAME} ${OBJS}
+			${AR} ${NAME} ${OBJS} 
 
 bonus :	 	${OBJS} ${OBJS_B}
 			${AR} ${NAME} ${OBJS} ${OBJS_B}
@@ -56,4 +56,3 @@ fclean :	clean
 			${RM} ${NAME}
 
 re :		fclean all
-
