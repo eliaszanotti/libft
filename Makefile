@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/11 13:27:22 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/11 15:14:28 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,14 @@ NAME	= libft.a
 HEADER	= . 
 CC		= cc
 CFLAGS	= -g3 -Wall -Wextra -Werror
-RM		= rm -f
+RM		= rm -rf
 AR		= ar rcs
-DIR_O	= .objs
+DIR_O	= .objs/
 
 all :		${NAME}
+
+${DIR_O} :
+			mkdir -p ${DIR_O}
 
 %.o: %.c	${DIR_O}
 			${CC} ${CFLAGS} -I ${HEADER} -c $< -o ${<:.c=.o}
@@ -51,9 +54,6 @@ clean :
 			${RM} ${OBJS} ${OBJS_B}
 
 fclean :	clean
-			${RM} ${NAME}
+			${RM} ${NAME} ${DIR_O}
 
 re :		fclean all
-
-${DIR_O} :
-			mkdir -p ${DIR_O}

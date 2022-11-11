@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:37:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/09 22:09:05 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 15:18:05 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	const char	*copy_s1;
-	const char	*copy_s2;
-	size_t		i;
+	unsigned char	*copy_s1;
+	unsigned char	*copy_s2;
+	size_t			i;
 
-	copy_s1 = s1;
-	copy_s2 = s2;
+	copy_s1 = (unsigned char *)s1;
+	copy_s2 = (unsigned char *)s2;
 	i = 0;
 	if (n == 0)
 		return (0);
