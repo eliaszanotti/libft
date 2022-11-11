@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:11:35 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/11 16:58:07 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 17:00:30 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*new_s;
 	size_t	len;
 
-	
 	if (!s1 || !set)
 		return (0);
 	while (*s1 && ft_strchr(set, *s1))
