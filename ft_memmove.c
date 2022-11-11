@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:48:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/09 10:10:56 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 16:20:45 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t		i;
 	const char	*copy_src;
 	char		*copy_dest;
-	char		buffer[4096];
+	char		buffer[8096];
 
 	i = 0;
 	copy_src = src;

@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/11 15:30:40 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/11 16:12:40 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ OBJS_B	= ${SRCS_B:.c=.o}
 # OBJS	= ${addprefix ${DIR_O}, ${LST}}
 # OBJS_B	= ${addprefix ${DIR_O}, ${LST_B}}
 
-
 NAME	= libft.a
 HEADER	= . 
 CC		= cc
@@ -41,8 +40,8 @@ DIR_O	= .objs/
 
 all :		${NAME}
 
-${DIR_O} :
-			mkdir -p ${DIR_O}
+# ${DIR_O} :
+#			mkdir -p ${DIR_O}
 
 %.o: %.c	${DIR_O}
 			${CC} ${CFLAGS} -I ${HEADER} -c $< -o ${<:.c=.o}
