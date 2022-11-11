@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:03:41 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/11 12:12:54 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 12:34:30 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,21 +74,3 @@ char	**ft_split(char const *s, char c)
 	tab[mallocsize] = 0;
 	return (tab);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	int i = 0;
-	char *s = "   tetdet dfetfe detfefefe";
-
-	char **tab = ft_split(s, ' ');
-	size_t size = ft_mallocsize(s, ' ');
-	
-	printf("%lu\n", size);
-	
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-}*/
