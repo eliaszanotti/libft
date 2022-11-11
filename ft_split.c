@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:03:41 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/11 12:34:30 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 14:55:53 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ static size_t	ft_mallocsize(char const *s, char c)
 	return (count);
 }
 
-static char **ft_splitstr(char const *s, char c, char **tab)
+static char	**ft_splitstr(char const *s, char c, char **tab)
 {
-	int i;
-	int j;
-	int i_tab;
-	
+	int	i;
+	int	j;
+	int	i_tab;
+
 	i = 0;
 	j = 0;
 	i_tab = 0;
@@ -49,7 +49,7 @@ static char **ft_splitstr(char const *s, char c, char **tab)
 			i++;
 			j++;
 		}
-		tab[i_tab] = malloc(sizeof(char) * (j + 1)); 
+		tab[i_tab] = malloc(sizeof(char) * (j + 1));
 		if (!tab)
 			return (0);
 		ft_strlcpy(tab[i_tab], s + (i - j), j + 1);
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	mallocsize = ft_mallocsize(s, c); 
+	mallocsize = ft_mallocsize(s, c);
 	tab = malloc(sizeof(char *) * (mallocsize + 1));
 	if (!tab)
 		return (0);
