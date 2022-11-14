@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:45:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/14 10:19:16 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/14 10:49:05 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t		i;
 	const char	*copy_src;
 	char		*copy_dest;
-	
+
 	if (!dest && !src)
 		return (0);
 	i = -1;
