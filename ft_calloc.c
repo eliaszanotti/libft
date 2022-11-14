@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:06:42 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/14 11:05:24 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/14 11:18:32 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	total;
-	char	*new_s;
+	void	*new_s;
 
 	total = count * size;
 	if (!count || !size)
@@ -25,9 +25,7 @@ void	*ft_calloc(size_t count, size_t size)
 	new_s = malloc(total);
 	if (!new_s)
 		return (0);
-	while (total > 0)
-		new_s[total--] = '\0';
-
+	ft_memset(new_s, 0, total);
 	//ft_bzero(new_s, total);
 	return (new_s);
 }

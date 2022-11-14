@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:03:41 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/11 14:55:53 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/14 11:07:07 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	**ft_splitstr(char const *s, char c, char **tab)
 			i++;
 			j++;
 		}
-		tab[i_tab] = malloc(sizeof(char) * (j + 1));
+		tab[i_tab] = ft_calloc(sizeof(char), (j + 1));
 		if (!tab)
 			return (0);
 		ft_strlcpy(tab[i_tab], s + (i - j), j + 1);
