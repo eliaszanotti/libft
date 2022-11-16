@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:06:42 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/14 11:18:32 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/16 11:52:25 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!new_s)
 		return (0);
 	ft_memset(new_s, 0, total);
-	//ft_bzero(new_s, total);
 	return (new_s);
 }
