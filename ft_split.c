@@ -6,11 +6,12 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:03:41 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/14 11:07:07 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/16 12:19:30 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	ft_mallocsize(char const *s, char c)
 {
@@ -19,42 +20,35 @@ static size_t	ft_mallocsize(char const *s, char c)
 	count = 0;
 	while (*s)
 	{
-		if (*s != c && *s)
+		if (*s != c)
 		{
 			while (*s != c && *s)
 				s++;
 			count++;
 		}
-		if (*s)
+		else
 			s++;
 	}
 	return (count);
 }
 
-static char	**ft_splitstr(char const *s, char c, char **tab)
+static char	**ft_splitstr(char const *s, char c, char **tab, size_t mallocsize)
 {
-	int	i;
-	int	j;
-	int	i_tab;
+	int		i;
+	size_t	i_tab;
 
 	i = 0;
-	j = 0;
 	i_tab = 0;
-	while (s[i])
+	while (i_tab < mallocsize)
 	{
-		while (s[i] == c && s[i])
-			i++;
 		while (s[i] != c && s[i])
-		{
 			i++;
-			j++;
-		}
-		tab[i_tab] = ft_calloc(sizeof(char), (j + 1));
-		if (!tab)
-			return (0);
-		ft_strlcpy(tab[i_tab], s + (i - j), j + 1);
-		j = 0;
+		tab[i_tab] = ft_substr(s, 0, i);
+		s += i;
+		while (*s == c && *s)
+			s++;
 		i_tab++;
+		i = 0;
 	}
 	return (tab);
 }
@@ -64,13 +58,26 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	size_t	mallocsize;
 
-	if (!s)
-		return (0);
+	if (!s || !*s)
+	{
+		tab = malloc(sizeof(char *));
+		tab[0] = 0;
+		return (tab);
+	}
+	if (!c)
+	{
+		tab = malloc(sizeof(char *) * 2);
+		tab[0] = ft_substr(s, 0, ft_strlen(s));
+		tab[1] = 0;
+		return (tab);
+	}
+	while (*s == c)
+		s++;
 	mallocsize = ft_mallocsize(s, c);
 	tab = malloc(sizeof(char *) * (mallocsize + 1));
 	if (!tab)
 		return (0);
-	tab = ft_splitstr(s, c, tab);
-	tab[mallocsize] = 0;
+	tab = ft_splitstr(s, c, tab, mallocsize);
+	tab[mallocsize] = NULL;
 	return (tab);
 }

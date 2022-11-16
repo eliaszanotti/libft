@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/11 16:12:40 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/14 14:33:51 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,6 @@ SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 
 OBJS	= ${SRCS:.c=.o}
 OBJS_B	= ${SRCS_B:.c=.o}
-
-# OBJS	= ${addprefix ${DIR_O}, ${LST}}
-# OBJS_B	= ${addprefix ${DIR_O}, ${LST_B}}
 
 NAME	= libft.a
 HEADER	= . 
