@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/16 12:21:36 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/16 13:25:35 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,3 +53,5 @@ fclean :	clean
 			${RM} ${NAME} 
 
 re :		fclean all
+
+.PHONY : re all clean fclean bonus
