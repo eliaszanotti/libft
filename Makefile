@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/16 14:31:50 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/17 16:06:36 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJS_B	= ${SRCS_B:.c=.o}
 NAME	= libft.a
 HEADER	= . 
 CC		= cc
-CFLAGS	= -g3 -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 AR		= ar rcs
 DIR_O	= .objs/

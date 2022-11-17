@@ -6,13 +6,13 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:44:20 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/10 15:03:06 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/17 16:07:05 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_mallocsize(int n, size_t size)
+static size_t	ft_mallocsize(int n, size_t size)
 {
 	if (n < 0)
 		return (ft_mallocsize(-n, size + 1));
@@ -21,7 +21,7 @@ size_t	ft_mallocsize(int n, size_t size)
 	return (ft_mallocsize(n / 10, size + 1));
 }
 
-char	*ft_charcat(char *s, char c)
+static char	*ft_charcat(char *s, char c)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ char	*ft_charcat(char *s, char c)
 	return (s);
 }
 
-char	*ft_rev_int_tab(char *tab, int size)
+static char	*ft_rev_int_tab(char *tab, int size)
 {
 	int		left_i;
 	int		right_i;
@@ -52,7 +52,7 @@ char	*ft_rev_int_tab(char *tab, int size)
 	return (tab);
 }
 
-char	*ft_loop(char *str, int n)
+static char	*ft_loop(char *str, int n)
 {		
 	while (n > 9)
 	{
