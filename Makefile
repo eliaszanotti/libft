@@ -6,20 +6,10 @@
 #    By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/17 16:06:36 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2023/02/06 15:19:39 by ezanotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-OS				= $(shell uname -s)
-
-ifeq ($(OS), Linux)
-	PRINT = @echo -ne
-endif
-ifeq ($(OS), Darwin)
-	PRINT = @printf
-endif
-
-# SOURCES
 S_LIB	= ft_isalpha.c ft_isdigit.c ft_isalnum.c 			\
 		ft_isascii.c ft_isprint.c ft_strlen.c				\
 		ft_memset.c ft_bzero.c ft_memcpy.c 				\
@@ -36,42 +26,42 @@ S_LIB	= ft_isalpha.c ft_isdigit.c ft_isalnum.c 			\
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c 		\
 		ft_lstmap.c ft_strlcat.c 
 
-DIR_OBJS = .objs/
-OBJS = $(patsubst %.c, $(DIR_OBJS)%.o, $(S_LIB))
+D_OBJS	= .objs/
+OBJS	= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB))
 
 # VARIABLES
 NAME	= libft.a
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
+PRINT	= @printf
 
-# COMPILATION
-all :		${NAME}
+all:		${NAME}
 
-${DIR_OBJS}%.o :  %.c	libft.h Makefile
-				@mkdir -p $(shell dirname $@)
-				@${PRINT} "${YELLOW}${SUPPR}Creating libft's objects : $@"
-				@${CC} ${CFLAGS} -c $< -o $@
+${D_OBJS}%.o: %.c libft.h Makefile
+			@mkdir -p $(shell dirname $@)
+			@${PRINT} "${YELLOW}${SUPPR}Creating ${NAME}'s objects : $@"
+			@${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS}
-			@${PRINT} "${GREEN}${SUPPR}Creating libft's objects : DONE\n"
-			@${PRINT} "${YELLOW}Compiling libft... ${DEFAULT}"
+			@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE\n"
+			@${PRINT} "${YELLOW}Compiling ${NAME}... ${DEFAULT}"
 			@ar rc ${NAME} ${OBJS}
-			@${PRINT} "${GREEN}${SUPPR}Compiling libft : DONE ${DEFAULT}\n"
+			@${PRINT} "${GREEN}${SUPPR}Compiling ${NAME} : DONE ${DEFAULT}\n"
 
-clean :
-			@${RM} ${DIR_OBJS}
+clean:
+			@${RM} ${D_OBJS}
 
-fclean :	clean
+fclean:		clean
 			@${RM} ${NAME} 
 
-re :		fclean all
+re:			fclean all
 
-RED = \033[1;31m
-GREEN = \033[1;32m
-YELLOW = \033[1;33m
-DEFAULT = \033[0m
-SUPPR = \r\033[2K
-MAKEFLAGS += --no-print-directory
+RED			= \033[1;31m
+GREEN		= \033[1;32m
+YELLOW		= \033[1;33m
+DEFAULT		= \033[0m
+SUPPR		= \r\033[2K
+MAKEFLAGS	+= --no-print-directory
 
-.PHONY : all re clean fclean
+.PHONY:		all re clean fclean
