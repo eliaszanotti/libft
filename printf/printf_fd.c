@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:15:46 by ezanotti          #+#    #+#             */
-/*   Updated: 2023/03/21 12:48:31 by elias            ###   ########.fr       */
+/*   Updated: 2023/03/21 13:48:34 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ int	ft_printf_fd(const char *s, int fd, ...)
 	i = 0;
 	total = 0;
 	if (write(1, 0, 0) == -1)
-	{
-		return (-1);
-		va_end(args);
-	}
+		return (va_end(args), -1);
 	while (s[i])
 	{
 		if (s[i] == '%' && s[i + 1])
@@ -62,6 +59,5 @@ int	ft_printf_fd(const char *s, int fd, ...)
 			total += ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	va_end(args);
-	return (total);
+	return (va_end(args), total);
 }
