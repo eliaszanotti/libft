@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 14:00:04 by ezanotti          #+#    #+#              #
-#    Updated: 2023/03/10 14:00:06 by ezanotti         ###   ########.fr        #
+#    Updated: 2023/03/21 12:41:47 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,8 @@ S_LIB		= ${D_CHAR}ft_atoi.c			\
 			${D_MEM}ft_memcpy.c				\
 			${D_MEM}ft_memmove.c			\
 			${D_MEM}ft_memset.c				\
+			${D_PRINTF}printf_fd.c			\
+			${D_PRINTF}printf_fd_utils.c	\
 			${D_PUT}ft_putchar_fd.c			\
 			${D_PUT}ft_putendl_fd.c			\
 			${D_PUT}ft_putnbr_fd.c			\
@@ -81,6 +83,7 @@ D_CHAR		= char/
 D_ILST		= ilst/
 D_LST		= lst/
 D_MEM		= mem/
+D_PRINTF	= printf/
 D_PUT		= put/
 D_STR		= str/
 
