@@ -6,12 +6,16 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:37:49 by ezanotti          #+#    #+#             */
-/*   Updated: 2023/06/20 12:28:17 by elias            ###   ########.fr       */
+/*   Updated: 2023/06/20 12:50:29 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 50
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -40,6 +44,11 @@ int		ft_isprint(int c);
 char	*ft_itoa(int n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+//		GNL
+int		ft_isnl(const char *s);
+size_t	ft_strlen_gnl(const char *str);
+char	*get_next_line(int fd);
 
 //		ILST
 void	ft_ilstadd_back(t_ilst **lst, t_ilst *new);
