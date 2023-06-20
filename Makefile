@@ -6,7 +6,7 @@
 #    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 14:00:04 by ezanotti          #+#    #+#              #
-#    Updated: 2023/06/20 13:10:08 by elias            ###   ########.fr        #
+#    Updated: 2023/06/20 13:40:29 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,8 +76,11 @@ S_LIB_LIST	= \
 			${D_STR}ft_strtrim.c					\
 			${D_STR}ft_substr.c						\
 
+HDRS_LIST	= libft.h	\
+
 S_LIB		= ${addprefix ${D_SRCS}, ${S_LIB_LIST}}
 OBJS		= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB))
+HDRS		= ${addprefix ${D_INCLUDES}, ${HDRS_LIST}}
 
 # VARIABLES
 NAME		= libft.a
@@ -85,7 +88,7 @@ CC			= cc
 
 # FLAGS
 MAKEFLAGS	+= --no-print-directory
-CFLAGS		= -Wall -Wextra -Werror -I .
+CFLAGS		= -Wall -Wextra -Werror -I ${D_INCLUDES}
 
 # COMMANDS
 RM			= rm -rf
@@ -94,6 +97,7 @@ PRINT		= @printf
 # DIRECTORIES
 D_SRCS		= srcs/
 D_OBJS		= .objs/
+D_INCLUDES	= includes/
 D_CHAR		= char/
 D_GNL		= gnl/
 D_ILST		= ilst/
@@ -112,7 +116,7 @@ SUPPR		= \r\033[2K
 
 all:		${NAME}
 
-${D_OBJS}%.o:%.c		libft.h Makefile
+${D_OBJS}%.o:%.c		${HDRS} Makefile
 			@mkdir -p	$(shell dirname $@)
 			@${PRINT}	"${YELLOW}${SUPPR}Creating libft's objects : $@"
 			@${CC}		${CFLAGS} -c $< -o $@
