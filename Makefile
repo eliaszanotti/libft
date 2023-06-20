@@ -6,7 +6,7 @@
 #    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 14:00:04 by ezanotti          #+#    #+#              #
-#    Updated: 2023/06/20 12:25:20 by elias            ###   ########.fr        #
+#    Updated: 2023/06/20 13:10:08 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,10 @@ S_LIB_LIST	= \
 			${D_CHAR}ft_itoa.c						\
 			${D_CHAR}ft_tolower.c					\
 			${D_CHAR}ft_toupper.c					\
+			\
+			${D_GNL}ft_isnl.c						\
+			${D_GNL}ft_strlen_gnl.c					\
+			${D_GNL}get_next_line.c					\
 			\
 			${D_ILST}ft_ilstadd_back.c				\
 			${D_ILST}ft_ilstadd_front.c				\
@@ -91,6 +95,7 @@ PRINT		= @printf
 D_SRCS		= srcs/
 D_OBJS		= .objs/
 D_CHAR		= char/
+D_GNL		= gnl/
 D_ILST		= ilst/
 D_LST		= lst/
 D_MEM		= mem/
