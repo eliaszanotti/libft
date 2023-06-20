@@ -6,7 +6,7 @@
 #    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 14:00:04 by ezanotti          #+#    #+#              #
-#    Updated: 2023/06/20 11:31:25 by elias            ###   ########.fr        #
+#    Updated: 2023/06/20 12:08:19 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,8 +76,8 @@ HDRS_LIST =	minishell.h	\
 			parsing.h	\
 			utils.h		\
 
-OBJS		= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB))
 S_LIB		= ${addprefix ${D_SRCS}, ${S_LIB_LIST}}
+OBJS		= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB))
 HDRS		= ${addprefix ${D_INCLUDES}, ${HDRS_LIST}}
 
 # VARIABLES
@@ -113,7 +113,7 @@ SUPPR		= \r\033[2K
 
 all:		${NAME}
 
-${D_OBJS}%.o:%.c	libft.h Makefile
+${D_OBJS}%.o:%.c		libft.h Makefile
 			@mkdir -p	$(shell dirname $@)
 			@${PRINT}	"${YELLOW}${SUPPR}Creating libft's objects : $@"
 			@${CC}		${CFLAGS} -c $< -o $@
