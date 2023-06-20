@@ -6,7 +6,7 @@
 #    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 14:00:04 by ezanotti          #+#    #+#              #
-#    Updated: 2023/06/20 11:26:05 by elias            ###   ########.fr        #
+#    Updated: 2023/06/20 11:31:25 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,15 @@ S_LIB_LIST	= \
 			${D_STR}ft_strtrim.c			\
 			${D_STR}ft_substr.c				\
 
-OBJS		= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB_LIST))
+HDRS_LIST =	minishell.h	\
+			exec.h		\
+			builtins.h	\
+			parsing.h	\
+			utils.h		\
+
+OBJS		= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB))
+S_LIB		= ${addprefix ${D_SRCS}, ${S_LIB_LIST}}
+HDRS		= ${addprefix ${D_INCLUDES}, ${HDRS_LIST}}
 
 # VARIABLES
 NAME		= libft.a
@@ -85,6 +93,8 @@ RM			= rm -rf
 PRINT		= @printf
 
 # DIRECTORIES
+D_SRCS		= srcs/
+D_INCLUDES	= includes/
 D_OBJS		= .objs/
 D_CHAR		= char/
 D_ILST		= ilst/
