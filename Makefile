@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 14:00:04 by ezanotti          #+#    #+#              #
-#    Updated: 2023/03/21 12:41:47 by elias            ###   ########.fr        #
+#    Updated: 2023/06/20 11:26:05 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-S_LIB		= ${D_CHAR}ft_atoi.c			\
+S_LIB_LIST	= \
+			${D_CHAR}ft_atoi.c				\
 			${D_CHAR}ft_isalnum.c			\
 			${D_CHAR}ft_isalpha.c			\
 			${D_CHAR}ft_isascii.c			\
@@ -19,11 +20,13 @@ S_LIB		= ${D_CHAR}ft_atoi.c			\
 			${D_CHAR}ft_itoa.c				\
 			${D_CHAR}ft_tolower.c			\
 			${D_CHAR}ft_toupper.c			\
+			\
 			${D_ILST}ft_ilstadd_back.c		\
 			${D_ILST}ft_ilstadd_front.c		\
 			${D_ILST}ft_ilstlast.c			\
 			${D_ILST}ft_ilstnew.c			\
 			${D_ILST}ft_ilstsize.c			\
+			\
 			${D_LST}ft_lstadd_back.c		\
 			${D_LST}ft_lstadd_front.c		\
 			${D_LST}ft_lstclear.c			\
@@ -33,6 +36,7 @@ S_LIB		= ${D_CHAR}ft_atoi.c			\
 			${D_LST}ft_lstmap.c				\
 			${D_LST}ft_lstnew.c				\
 			${D_LST}ft_lstsize.c			\
+			\
 			${D_MEM}ft_bzero.c				\
 			${D_MEM}ft_calloc.c				\
 			${D_MEM}ft_memchr.c				\
@@ -40,12 +44,15 @@ S_LIB		= ${D_CHAR}ft_atoi.c			\
 			${D_MEM}ft_memcpy.c				\
 			${D_MEM}ft_memmove.c			\
 			${D_MEM}ft_memset.c				\
+			\
 			${D_PRINTF}printf_fd.c			\
 			${D_PRINTF}printf_fd_utils.c	\
+			\
 			${D_PUT}ft_putchar_fd.c			\
 			${D_PUT}ft_putendl_fd.c			\
 			${D_PUT}ft_putnbr_fd.c			\
 			${D_PUT}ft_putstr_fd.c			\
+			\
 			${D_STR}ft_split.c				\
 			${D_STR}ft_strcat.c				\
 			${D_STR}ft_strchr.c				\
@@ -63,7 +70,7 @@ S_LIB		= ${D_CHAR}ft_atoi.c			\
 			${D_STR}ft_strtrim.c			\
 			${D_STR}ft_substr.c				\
 
-OBJS		= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB))
+OBJS		= $(patsubst %.c, $(D_OBJS)%.o, $(S_LIB_LIST))
 
 # VARIABLES
 NAME		= libft.a
