@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:44:20 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/17 16:07:05 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2023/08/29 14:32:28 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char	*ft_rev_int_tab(char *tab, int size)
 }
 
 static char	*ft_loop(char *str, int n)
-{		
+{
 	while (n > 9)
 	{
 		ft_charcat(str, n % 10 + 48);

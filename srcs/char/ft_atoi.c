@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:17:18 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/16 13:37:02 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2023/08/29 14:32:14 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
-	{	
+	{
 		if (total != ((total * 10) + *str - '0') / 10)
 			return (ft_overflow(negatif));
 		total = (total * 10) + *str - '0';

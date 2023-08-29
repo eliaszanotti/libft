@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:48:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/14 10:48:48 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2023/08/29 14:32:01 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n--)
 			copy_dest[n] = copy_src[n];
-	}		
+	}
 	return (dest);
 }
